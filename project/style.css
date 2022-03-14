@@ -1,0 +1,34 @@
+header {
+    display: flex;
+    justify-content: end;
+    margin: 20px 10px 20px;
+}
+
+.header-btn {
+    padding: 5px 15px;
+    background-color: yellow;
+}
+
+.product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-item {
+    width: 20%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.product-img {
+    width: 100%;
+}
+
+.product-btn {
+    padding: 5px 15px;
+    background-color: yellowgreen;
+}
