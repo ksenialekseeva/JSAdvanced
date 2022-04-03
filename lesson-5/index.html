@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Интернет-магазин</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+    <header>
+        <form action="#" class="search-form" @submit.prevent="filter">
+            <input type="text" class="search-field" v-model="userSearch">
+            <button class="btn-search" type="submit">Найти</button>
+        </form>
+        <button class="header-btn" type="button" @click="show=!show">Корзина</button>
+        <div class="header__cart" v-show="show">
+            <div class="header__cart-content">
+                <div class="header__cart-header">Название товара</div>
+                <div class="header__cart-header">Количество</div>
+                <div class="header__cart-header">Цена за шт.</div>
+                <div class="header__cart-header">Итого</div>
+                <div class="header__cart-header">Удалить</div>
+            </div>
+            <div class="header__cart-content" v-for="cartItem of cart" :key="cartItem.id_product">
+                <div>{{cartItem.product_name}}</div>
+                <div>
+                    <span class="productCount">{{cartItem.quantity}}</span> шт.
+                </div>
+                <div>${{cartItem.price}}</div>
+                <div>
+                    $<span class="productTotalRow">{{cartItem.price * cartItem.quantity}}</span>
+                </div>
+                <button class="delete-btn" @click="remove(cartItem)" type="button">Удалить</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="products">
+            <div class="product-item" v-for="product of filtered" :key="product.id_product">
+                <img :src="imgCatalog" alt="Some img">
+                <div class="desc">
+                    <h3>{{product.product_name}}</h3>
+                    <p>{{product.price}} $</p>
+                    <button class="buy-btn" @click="addProduct(product)">Купить</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/main-vue.js"></script>
+</body>
+</html>
