@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма обратной связи</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="#">
+        <fieldset class="form">
+                <input class="input" id="name" type="text" placeholder="First Name">
+                <input class="input" id="phone" type="tel" placeholder="+7(000)000-0000">
+                <input class="input" id="email" type="email" placeholder="mymail@mail.ru">
+                <input class="input" id="text" type="text" placeholder="Enter your text">
+        </fieldset>
+        <p>
+            1. Имя содержит только буквы.<br>
+            2. Телефон имеет вид +7(000)000-0000.<br>
+            3. E-mail имеет вид mymail@mail.ru, или my.mail@mail.ru, или my-mail@mail.ru.<br>
+            4. Текст произвольный.<br>
+            5. Если одно из полей не прошло валидацию, необходимо выделить это поле красной рамкой
+            и сообщить пользователю об ошибке.
+            </p>
+        <button type="submit">Отправить</button>
+    </form>
+    <script src="form.js"></script>
+</body>
+</html>
