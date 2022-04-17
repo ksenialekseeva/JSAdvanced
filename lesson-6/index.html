@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Интернет-магазин</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+    <header>
+        <!-- фильтр -->
+        <filtercomp></filtercomp>
+        <!-- корзина -->
+        <button class="header-btn" type="button" @click="show=!show">Корзина</button>
+        <cart :cart-items="cartItems" :visability="show"></cart>
+    </header>
+    <main>
+        <!-- каталог продуктов -->
+        <products :products="filtered" :img="imgCatalog" @add-product="addProduct"></products>
+        <errorconnect v-if="error"></errorconnect>
+    </main>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/ProductComponent.js"></script>
+    <script src="js/CartComponent.js"></script>
+    <script src="js/FilterComponent.js"></script>
+    <script src="js/ErrorComponent.js"></script>
+    <script src="js/main-vue.js"></script>
+</body>
+</html>
